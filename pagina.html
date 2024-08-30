@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGROFE - Innovación Agrícola</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="progress-nav">
+        <div class="progress-bar"></div>
+        <ul>
+            <li class="active" data-section="inicio">Inicio</li>
+            <li data-section="servicios">Servicios</li>
+            <li data-section="proyectos">Proyectos</li>
+            <li data-section="contacto">Contacto</li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="inicio" class="section">
+            <h1>AGROFE</h1>
+            <p>Innovación y sostenibilidad en agronomía</p>
+        </section>
+
+        <section id="servicios" class="section">
+            <h2>Nuestros Servicios</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Asesoría Agrícola</h3>
+                    <p>Optimización de cultivos y prácticas agrícolas sostenibles.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-tractor"></i>
+                    <h3>Tecnología Agrícola</h3>
+                    <p>Implementación de soluciones tecnológicas para la agricultura moderna.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-water"></i>
+                    <h3>Sistemas de Riego</h3>
+                    <p>Diseño e instalación de sistemas de riego eficientes.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Cultivos Orgánicos</h3>
+                    <p>Asesoramiento en la transición y mantenimiento de cultivos orgánicos.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-microscope"></i>
+                    <h3>Análisis de Suelos</h3>
+                    <p>Estudios detallados para optimizar la fertilidad y productividad del suelo.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-sun"></i>
+                    <h3>Energía Solar Agrícola</h3>
+                    <p>Implementación de sistemas solares para reducir costos energéticos en la agricultura.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="section">
+            <h2>Proyectos Destacados</h2>
+            <div class="project-grid">
+                <div class="project-item">
+                    <div class="project-front">
+                        <img src="proyecto1.jpg" alt="Reforestación Sostenible">
+                        <h3>Reforestación Sostenible</h3>
+                    </div>
+                    <div class="project-back">
+                        <p>Recuperación de 500 hectáreas de bosque nativo, mejorando la biodiversidad local.</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-front">
+                        <img src="proyecto2.jpg" alt="Agricultura Vertical Urbana">
+                        <h3>Agricultura Vertical Urbana</h3>
+                    </div>
+                    <div class="project-back">
+                        <p>Implementación de sistemas de cultivo vertical en 10 edificios de la ciudad, aumentando la producción local de alimentos.</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-front">
+                        <img src="proyecto3.jpg" alt="Optimización de Riego">
+                        <h3>Optimización de Riego</h3>
+                    </div>
+                    <div class="project-back">
+                        <p>Reducción del 40% en el consumo de agua en cultivos de maíz mediante sistemas de riego inteligentes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
+            <h2>Contáctanos</h2>
+            <form>
+                <input type="text" placeholder="Nombre">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Mensaje"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="https://www.facebook.com/OscarAgrofe" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/agrofe" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/agrofe" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/40697451" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="contact-info">
+                <p>+502 4069 7451</p>
+                <p>info@agrofe.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 AGROFE. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="animations.js"></script>
+</body>
+</html>

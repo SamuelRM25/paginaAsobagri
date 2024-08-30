@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --color-primary: #2ecc71;
+    --color-secondary: #3498db;
+    --color-accent: #e74c3c;
+    --color-background: #ecf0f1;
+    --color-text: #34495e;
+    --color-light: #ffffff;
+    --color-dark: #2c3e50;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.progress-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.progress-bar {
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.progress-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.progress-nav li {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    font-weight: 600;
+}
+
+.progress-nav li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--color-accent);
+    transition: var(--transition);
+    transform: translateX(-50%);
+}
+
+.progress-nav li:hover::after,
+.progress-nav li.active::after {
+    width: 100%;
+}
+
+.progress-nav li.active {
+    color: var(--color-accent);
+}
+
+.section {
+    min-height: 100vh;
+    padding: 6rem 2rem 4rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#inicio {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-light);
+    text-align: center;
+}
+
+#inicio h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+#inicio p {
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.service-grid, .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+}
+
+.service-item, .project-item {
+    background: var(--color-light);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.service-item:hover, .project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.service-item::before, .project-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+}
+
+.service-item h3, .project-item h3 {
+    color: var(--color-dark);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.service-item i {
+    font-size: 3rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.service-item p {
+    color: var(--color-text);
+    font-size: 0.9rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form input, form textarea {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: var(--color-light);
+    transition: var(--transition);
+    font-family: 'Poppins', sans-serif;
+}
+
+form input:focus, form textarea:focus {
+    border-color: var(--color-secondary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+form button {
+    background: var(--color-accent);
+    color: var(--color-light);
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+form button:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .progress-nav ul {
+        flex-wrap: wrap;
+    }
+    .progress-nav li {
+        flex: 1 1 50%;
+        text-align: center;
+    }
+    #inicio h1 {
+        font-size: 3rem;
+    }
+    #inicio p {
+        font-size: 1.2rem;
+    }
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 4rem 1rem 2rem;
+    }
+    .progress-nav li {
+        padding: 0.75rem 1rem;
+    }
+}
+
+.project-item {
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.project-front, .project-back {
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.project-front {
+    transform: rotateY(0deg);
+}
+
+.project-back {
+    transform: rotateY(180deg);
+    background-color: var(--color-secondary);
+    color: var(--color-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.project-item:hover .project-front {
+    transform: rotateY(180deg);
+}
+
+.project-item:hover .project-back {
+    transform: rotateY(0deg);
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-media {
+    margin-bottom: 1rem;
+}
+
+.social-icon {
+    color: var(--color-light);
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    color: var(--color-accent);
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+}
+
+.copyright {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
